@@ -1,0 +1,841 @@
+<script type="text/javascript" src="/js/sources/facebook.js" defer></script>
+
+<div class="container-fluid bg-dark">
+    <div class="row">
+        <div class="col-md-12">
+          
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs d-flex flex-row justify-content-around p-5 ">
+                <li class="active list-group-item"><a class="nav-link" data-toggle="tab"
+                        href="#facebook_person">Facebook Person</a></li>
+                <li class="list-group-item"><a class="nav-link" data-toggle="tab" href="#facebook_group">Facebook
+                        Group</a></li>
+                <li class="list-group-item"><a class="nav-link" data-toggle="tab" href="#facebook_page">Facebook
+                        Page</a></li>
+                        
+            </ul>
+
+            <div class="tab-content">
+                <div id="facebook_person" class="tab-pane show fade in active">
+                    <div class="row mb-5 mt-5">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+
+                            <form action="add_facebook_person_target" method="POST" id="facebook_person_target_form" name="facebook_person_target_form" >
+                                <div class="card" >
+                                    <div class="card-header">
+                                        <p class="font-weight-bold">Add Facebook Person Target</p>
+                                    </div>
+                                    <div class="card-header">
+                                        <div class="row">
+
+                                            <div class="col-md-3">
+                                                <div class="float-left ">
+                                                    <img id="profile_image" src="/images/instagram_profile_avatar.jpg"
+                                                        height="200px" width="200px" style="border-radius: 10px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="col-12 mt-3">
+                                                    <label class="sr-only" for="author_type"></label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author
+                                                                Type:</div>
+                                                        </div>
+<input type="text" class="form-control " id="author_type" name="author_type" value="facebook_person" placeholder="" readonly="readonly" required="required" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="author_id"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author ID:
+                                                            </div>
+                                                        </div>
+<input type="number" class="form-control " id="author_id" name="author_id" placeholder="" required="required" />
+
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="author_id_err"></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="author_name"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author
+                                                                Name:</div>
+                                                        </div>
+<input type="text" class="form-control " id="author_name" name="author_name" placeholder=""  required="required /">
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="author_name_err"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="author_url"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author URL:
+                                                            </div>
+                                                        </div>
+<input type="url" class="form-control " id="author_url" name="author_url" placeholder="" required="required" />
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="author_url_err"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+
+
+
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <span class="alert alert-info font-weight-bold " style="font-size:18px"
+                                                    id="smart_search_err"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row  p-3">
+                                            <div class="col-md-6  pr-5 pl-5">
+
+                                                <p class=" " style="font-size:24px">Smart Search</p>
+
+
+
+
+                                                <label class="sr-only" for="author_account"></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text font-weight-bold  text-white"
+                                                            style="width:150px;background-color:#006390">Author Account
+                                                        </div>
+                                                    </div>
+<input type="text" class="form-control " id="author_account" name="author_account" required="required" />
+                                                </div>
+                                                <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                    style="font-size:12px;margin-left:150px"
+                                                    id="author_account_err"></span> <button
+                                                    class="btn  btn-info float-right mb-2" id="smart_serach"><i
+                                                        class="fas fa-sync fa-spin  text-white mr-2  "
+                                                        id="person_load_icon"></i>Smart
+                                                    Search</button>
+
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="row">
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="expired_on"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">Expired
+                                                                    On</div>
+                                                            </div>
+<input type="date" id="expired_on" class="form-control" name="expired_on" placeholder="" required="required" />
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="interval"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">
+                                                                    Interval</div>
+                                                            </div>
+<select class=" custom-select mr-sm-2 form-control" id=" interval"></select>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div
+                                                        class="col-md-12 flex-row d-flex justify-content-around align-items-center">
+
+
+
+
+                                                        <div class="form-check mb-2 mr-sm-2">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="need_screenshots" name="need_screenshots" value="true">
+                                                            <label class="form-check-label badge text-white  p-2"
+                                                                id="need_screenshots_label" for="need_screenshots"
+                                                                style="background-color:#006390">
+                                                                Need Screenshots
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="card-header">
+                                        <button class="btn btn-secondary   float-left font-weight-bold" type="submit"
+                                            id="clearBTN">Clear facebook Person Form 
+                                            Target</button> <button class="btn btn-success font-weight-bold  float-right " type="submit"
+                                            id="submitBTN1">Submit
+                                            Facebook Person Target</button>
+                                    </div>
+                                </div>
+
+                </form>
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    {{!-- start table form  --}}
+<div class="row">
+
+        <div class="col-md-12 m-0 p-5 ">
+            <div class="card ">
+                <div class="card-header text-center">
+                    <p class="font-weight-bold">All Facebook Authror Targets</p>
+                </div>
+                <div class="card-body m-0 p-5 ">
+                    <table class="table table-hover table-striped table-bordered display nowrap" id="facebook_person_table" style="width:100%;">
+                        <thead class="thead-dark font-weight-bold">
+                            <tr>
+                              {{!-- <th scope="col ">Sr #</th> --}}
+                              <th></th>
+                            <th scope="col ">Author Type</th>
+                            <th scope="col ">Author ID</th>
+                            <th scope="col ">Author Name</th>
+                            <th scope="col ">Author Account</th>
+                            <th scope="col ">Author URL</th>
+                            <th scope="col ">Expired On</th>
+                            <th scope="col ">Screenshots</th>
+                            <th scope="col ">Created at </th>
+                            <th scope="col" >Updated at </th>
+                         </tr>
+
+                        </thead>
+                      
+                        <tbody id="isntagram_author_table">
+                        {{#each list  as |value key|}}
+                           <tr>
+                                {{!-- <td>{{key}}</td> --}}
+                                <td></td>
+                                <td>{{this.author_type}}</td>
+                                <td>{{this.author_id}}</td>
+                                <td>{{this.author_name}}</td>
+                                <td>{{this.author_account}}</td>
+                                <td>{{this.author_url}}</td>
+                                <td>{{this.expired_on}}</td>
+                                <td>{{this.need_screenshots}}</td>
+                                <td>{{this.created_at}}</td>
+                                <td>{{this.updated_at}}</td>
+                            </tr>
+                         {{/each}}
+                          
+                        
+                     
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <i class="fas fa-spinner fa-spin mr-2 text-danger"></i> <span class="text-primary font-weight-bold "
+                        style="font-size:15px" id="table_last_sync">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+                    {{!-- end table  --}}
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{!-- Add facebook group form starts here  --}}
+
+
+
+
+
+
+
+
+                <div id="facebook_group" class="tab-pane fade">
+                     <div class="row mb-5 mt-5">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+
+                            <form action="add_facebook_group_target" method="POST"  id="facebook_group_target_form" name="facebook_group_target_form">
+                                <div class="card" id="facebook_group_target_form">
+                                    <div class="card-header">
+                                        <p class="font-weight-bold">Add Facebook Group Target</p>
+                                    </div>
+                                    <div class="card-header">
+                                        <div class="row">
+
+                                            <div class="col-md-3">
+                                                <div class="float-left ">
+                                                    <img id="profile_image" src="/images/instagram_profile_avatar.jpg"
+                                                        height="200px" width="200px" style="border-radius: 10px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="col-12 mt-3">
+                                                    <label class="sr-only" for="group_author_type"></label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author
+                                                                Type:</div>
+                                                        </div>
+<input type="text" class="form-control " id="group_author_type" name="group_author_type" value="facebook_group" placeholder="" readonly="readonly" required="required" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="group_author_id"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author ID:
+                                                            </div>
+                                                        </div>
+<input type="number" class="form-control " id="group_author_id" name="group_author_id" placeholder="" required="required" />
+
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="group_author_id_err"></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="group_author_name"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Group
+                                                                Name:</div>
+                                                        </div>
+<input type="text" class="form-control " id="group_author_name" name="group_author_name" placeholder=""  required="required /">
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="group_author_name_err"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="group_author_url"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Group URL:
+                                                            </div>
+                                                        </div>
+<input type="url" class="form-control " id="group_author_url" name="group_author_url" placeholder="" required="required" />
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="group_author_url_err"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+
+
+
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <span class="alert alert-info font-weight-bold " style="font-size:18px"
+                                                    id="group_smart_search_err"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row  p-3">
+                                            <div class="col-md-6  pr-5 pl-5">
+
+                                                <p class=" " style="font-size:24px">Smart Search</p>
+
+
+
+
+                                                <label class="sr-only" for="group_author_account"></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text font-weight-bold  text-white"
+                                                            style="width:150px;background-color:#006390">Author Account
+                                                        </div>
+                                                    </div>
+<input type="text" class="form-control " id="group_author_account" name="group_author_account" required="required" />
+                                                </div>
+                                                <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                    style="font-size:12px;margin-left:150px"
+                                                    id="group_author_account_err"></span> <button
+                                                    class="btn  btn-info float-right mb-2" id="smart_serach"><i
+                                                        class="fas fa-sync fa-spin  text-white mr-2  "
+                                                        id="group_load_icon"></i>Smart
+                                                    Search</button>
+
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="row">
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="group_expired_on"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">Expired
+                                                                    On</div>
+                                                            </div>
+<input type="date" id="group_expired_on" class="form-control" name="group_expired_on" placeholder="" required="required" />
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="group_interval"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">
+                                                                    Interval</div>
+                                                            </div>
+<select class=" custom-select mr-sm-2 form-control" id="group_interval"></select>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div
+                                                        class="col-md-12 flex-row d-flex justify-content-around align-items-center">
+
+
+
+
+                                                        <div class="form-check mb-2 mr-sm-2">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="group_need_screenshots" name="group_need_screenshots" value="true">
+                                                            <label class="form-check-label badge text-white  p-2"
+                                                                id="need_screenshots_label" for="group_need_screenshots"
+                                                                style="background-color:#006390">
+                                                                Need Screenshots
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="card-header">
+                                        <button class="btn btn-secondary  font-weight-bold float-left " type="submit"
+                                            id="clearBTN">Clear Facebook Group target Form
+                                            Target</button> <button class="btn btn-success  font-weight-bold  float-right " type="submit"
+                                            id="submitBTN2">Submit Facebook Group Target Form</button>
+                                    </div>
+                                </div>
+                </form>
+
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                      {{!-- start table form  --}}
+<div class="row">
+
+        <div class="col-md-12 m-0 p-5 ">
+            <div class="card ">
+                <div class="card-header text-center">
+                    <p class="font-weight-bold">All Facebook Group Targets</p>
+                </div>
+                <div class="card-body m-0 p-5 ">
+                    <table class="table table-hover table-striped table-bordered display nowrap" id="facebook_group_table" style="width:100%;">
+                        <thead class="thead-dark font-weight-bold">
+                            <tr>
+                              {{!-- <th scope="col ">Sr #</th> --}}
+                              <th></th>
+                            <th scope="col ">Author Type</th>
+                            <th scope="col ">Author ID</th>
+                            <th scope="col ">Author Name</th>
+                            <th scope="col ">Author Account</th>
+                            <th scope="col ">Author URL</th>
+                            <th scope="col ">Expired On</th>
+                            <th scope="col ">Screenshots</th>
+                            <th scope="col ">Created at </th>
+                            <th scope="col" >Updated at </th>
+                         </tr>
+
+                        </thead>
+                      
+                        <tbody id="isntagram_author_table">
+                        {{#each list  as |value key|}}
+                           <tr>
+                                {{!-- <td>{{key}}</td> --}}
+                                <td></td>
+                                <td>{{this.author_type}}</td>
+                                <td>{{this.author_id}}</td>
+                                <td>{{this.author_name}}</td>
+                                <td>{{this.author_account}}</td>
+                                <td>{{this.author_url}}</td>
+                                <td>{{this.expired_on}}</td>
+                                <td>{{this.need_screenshots}}</td>
+                                <td>{{this.created_at}}</td>
+                                <td>{{this.updated_at}}</td>
+                            </tr>
+                         {{/each}}
+                          
+                        
+                     
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <i class="fas fa-spinner fa-spin mr-2 text-danger"></i> <span class="text-primary font-weight-bold "
+                        style="font-size:15px" id="table_last_sync">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+                    {{!-- end table  --}}
+                </div>
+
+
+
+                <div id="facebook_page" class="tab-pane fade">
+                   <div class="row mb-5 mt-5">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+
+                            <form action="facebook_page/target" method="POST" id="facebook_page_target_form" name="facebook_page_target_form" >
+                                <div class="card" id="facebook_group_target_form">
+                                    <div class="card-header">
+                                        <p class="font-weight-bold">Add Facebook Page Target</p>
+                                    </div>
+                                    <div class="card-header">
+                                        <div class="row">
+
+                                            <div class="col-md-3">
+                                                <div class="float-left ">
+                                                    <img id="profile_image" src="/images/instagram_profile_avatar.jpg"
+                                                        height="200px" width="200px" style="border-radius: 10px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="col-12 mt-3">
+                                                    <label class="sr-only" for="page_author_type"></label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author
+                                                                Type:</div>
+                                                        </div>
+<input type="text" class="form-control " id="page_author_type" name="page_author_type" value="facebook_page" placeholder="" readonly="readonly" required="required" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="page_author_id"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Author ID:
+                                                            </div>
+                                                        </div>
+<input type="number" class="form-control " id="page_author_id" name="page_author_id" placeholder="" required="required" />
+
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="page_author_id_err"></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="page_author_name"></label>
+                                                    <div class="input-group ">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Group
+                                                                Name:</div>
+                                                        </div>
+<input type="text" class="form-control " id="page_author_name" name="page_author_name" placeholder=""  required="required /">
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="page_author_name_err"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-12">
+                                                    <label class="sr-only" for="page_author_url"></label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text font-weight-bold  text-white"
+                                                                style="width:150px;background-color:#006390">Group URL:
+                                                            </div>
+                                                        </div>
+<input type="url" class="form-control " id="page_author_url" name="page_author_url" placeholder="" required="required" />
+                                                    </div>
+                                                    <div class="m-0 p-0 mb-2">
+                                                        <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                            style="font-size:12px;margin-left:150px"
+                                                            id="page_author_url_err"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+
+
+
+
+
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <span class="alert alert-info font-weight-bold " style="font-size:18px"
+                                                    id="page_smart_search_err"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="row  p-3">
+                                            <div class="col-md-6  pr-5 pl-5">
+
+                                                <p class=" " style="font-size:24px">Smart Search</p>
+
+
+
+
+                                                <label class="sr-only" for="page_author_account"></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text font-weight-bold  text-white"
+                                                            style="width:150px;background-color:#006390">Author Account
+                                                        </div>
+                                                    </div>
+<input type="text" class="form-control " id="page_author_account" name="page_author_account" required="required" />
+                                                </div>
+                                                <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                                    style="font-size:12px;margin-left:150px"
+                                                    id="page_author_account_err"></span> <button
+                                                    class="btn  btn-info float-right mb-2" id="smart_serach"><i
+                                                        class="fas fa-sync fa-spin  text-white mr-2  "
+                                                        id="page_load_icon"></i>Smart
+                                                    Search</button>
+
+                                            </div>
+                                            <div class="col-md-6 ">
+
+                                                <div class="row">
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="page_datepicker-13"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">Expired
+                                                                    On</div>
+                                                            </div>
+<input type="date" id="page_datepicker-13" class="form-control" name="page_datepicker-13" placeholder="" required="required" />
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <div class="col-md-12 pr-5 pl-5">
+                                                        <label class="sr-only" for="page_interval"></label>
+                                                        <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text font-weight-bold  text-white"
+                                                                    style="width:150px;background-color:#006390">
+                                                                    Interval</div>
+                                                            </div>
+<select class=" custom-select mr-sm-2 form-control" id="page_interval"></select>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div
+                                                        class="col-md-12 flex-row d-flex justify-content-around align-items-center">
+
+
+
+
+                                                        <div class="form-check mb-2 mr-sm-2">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="page_need_screenshots" name="page_need_screenshots" value="true">
+                                                            <label class="form-check-label badge text-white  p-2"
+                                                                id="need_screenshots_label" for="page_need_screenshots"
+                                                                style="background-color:#006390">
+                                                                Need Screenshots
+                                                            </label>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="card-header">
+                                        <button class="btn btn-secondary  font-weight-bold float-left " type="submit"
+                                            id="clearBTN">Clear Facebook Page target Form
+                                            Target</button> <button class="btn btn-success  font-weight-bold  float-right " type="submit"
+                                            id="submitBTN3">Submit Facebook Page Target Form</button>
+                                    </div>
+                                </div>
+</form>
+
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    
+</div> 
+
+<script>
+
+
+  
+</script>

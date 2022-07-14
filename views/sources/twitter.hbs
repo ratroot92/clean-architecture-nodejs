@@ -1,0 +1,302 @@
+  <script src="/js/sources/twitter.js" defer></script>
+<div class="container-fluid">
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8  d-flex flex-row justify-content-around align-items-center ">
+         <a href="facebook"> <i class="fab fa-facebook-square fa-3x text-primary" id="facebook_page"></i></a>
+        <a href="instagram"> <i class="fab fa-instagram fa-3x" style="color:#DD2A7B" id="instagram_page"></i></a>
+        <a href="twitter"> <i class="fab fa-twitter-square text-primary fa-3x" style="color:#00ACEE" id="twitter_page"></i></a>
+        <a href="linkedin"> <i class="fab fa-linkedin text-info fa-3x" id="linkedin_page"></i></a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row mb-5 mt-5">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+
+            <div class="card">
+                <div class="card-header">
+                    <p class="font-weight-bold">Add Linked-In Authror Target</p>
+                </div>
+                <div class="card-header">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="float-left ">
+                                <img id="profile_image" src="/images/instagram_profile_avatar.jpg" height="200px"
+                                    width="200px" style="border-radius: 10px;" />
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+
+                            <div class="col-12 mt-3">
+                                <label class="sr-only" for="author_type"></label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text font-weight-bold  text-white"
+                                            style="width:150px;background-color:#006390">Author Type:</div>
+                                    </div>
+                                    <input type="text" class="form-control " id="author_type" name="author_type"
+                                        value="twitter_person" placeholder="" readonly="readonly" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="sr-only" for="author_id"></label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text font-weight-bold  text-white"
+                                            style="width:150px;background-color:#006390">Author ID:</div>
+                                    </div>
+                                    <input type="number" class="form-control " id="author_id" name="author_id"
+                                        placeholder="" required="required /">
+
+                                </div>
+                                <div class="m-0 p-0 mb-2">
+                                    <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                        style="font-size:12px;margin-left:150px" id="author_id_err"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <label class="sr-only" for="author_name"></label>
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text font-weight-bold  text-white"
+                                            style="width:150px;background-color:#006390">Author Name:</div>
+                                    </div>
+                                    <input type="text" class="form-control " id="author_name" name="author_name"
+                                        placeholder="" required="required /">
+                                </div>
+                                <div class="m-0 p-0 mb-2">
+                                    <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                        style="font-size:12px;margin-left:150px" id="author_name_err"></span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-12">
+                                <label class="sr-only" for="author_url"></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text font-weight-bold  text-white"
+                                            style="width:150px;background-color:#006390">Author URL:</div>
+                                    </div>
+                                    <input type="text" class="form-control " id="author_url" name="author_url"
+                                        placeholder="" required="required /">
+                                </div>
+                                <div class="m-0 p-0 mb-2">
+                                    <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                        style="font-size:12px;margin-left:150px" id="author_url_err"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="alert alert-info font-weight-bold " style="font-size:18px"
+                                id="smart_search_err"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row  p-3">
+                        <div class="col-md-6  pr-5 pl-5">
+
+                            <p class=" " style="font-size:24px">Smart Search</p>
+
+
+
+
+                            <label class="sr-only" for="author_account"></label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text font-weight-bold  text-white"
+                                        style="width:150px;background-color:#006390">Author Account</div>
+                                </div>
+                                <input type="text" class="form-control " id="author_account" name="author_account"
+                                    required="required" />
+                            </div>
+                            <span class="alert alert-danger font-weight-bold p-1 mb-1 "
+                                style="font-size:12px;margin-left:150px" id="author_account_err"></span> <button
+                                class="btn  btn-info float-right mb-2" id="smart_serach"><i
+                                    class="fas fa-sync fa-spin  text-white mr-2  " id="load_icon"></i>Smart
+                                Search</button>
+
+                        </div>
+                        <div class="col-md-6 ">
+
+                            <div class="row">
+                                <div class="col-md-12 pr-5 pl-5">
+                                    <label class="sr-only" for="expired_on"></label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text font-weight-bold  text-white"
+                                                style="width:150px;background-color:#006390">Expired On</div>
+                                        </div>
+                                        <input type="text" id="datepicker-13" class="form-control  " name="expired_on"
+                                            placeholder="" required="required" />
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-md-12 pr-5 pl-5">
+                                    <label class="sr-only" for="interval"></label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text font-weight-bold  text-white"
+                                                style="width:150px;background-color:#006390" ">Interval</div>
+                                    </div>
+                                    <select class=" custom-select mr-sm-2 form-control "
+                                      id=" interval">
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-12 pr-5 pl-5">
+                                            <label class="sr-only" for="tweets_type"></label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text font-weight-bold  text-white"
+                                                        style="width:150px;background-color:#006390" ">Tweets type</div>
+                                        </div>
+                                        <select class=" custom-select mr-sm-2 form-control "
+                                          id=" tweets_type">
+
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div
+                                                    class="col-md-12 flex-row d-flex justify-content-around align-items-center">
+
+                                                    <!-- <div class="form-check mb-2 mr-sm-2">
+                                <input class="form-check-input" type="checkbox" id="is_expired">
+                                <label class="form-check-label badge text-white  p-2" id="is_expired_label"
+                                    for="is_expired" style="background-color:#006390">
+                                    Is Expired
+                                </label>
+                            </div> -->
+
+
+
+                                                    <div class="form-check mb-2 mr-sm-2">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="need_screenshots">
+                                                        <label class="form-check-label badge text-white  p-2"
+                                                            id="need_screenshots_label" for="need_screenshots"
+                                                            style="background-color:#006390">
+                                                            Need Screenshots
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+
+
+                                </div>
+                                <div class="card-header">
+                                    <button class="btn btn-secondary   float-left " type="submit" id="clearBTN">Clear
+                                        Form
+                                        Target</button> <button class="btn btn-success   float-right " type="submit"
+                                        id="submitBTN">Submit
+                                        Target</button>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-12 m-0 p-5 ">
+                            <div class="card ">
+                                <div class="card-header text-center">
+                                    <p class="font-weight-bold">All Instagram Authror Targets</p>
+                                </div>
+                                <div class="card-body m-0 p-0 ">
+                                    <table class="table table-hover">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">SR-#</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">GTR</th>
+                                                <th scope="col">Author ID</th>
+                                                <th scope="col">Author Account</th>
+                                                <th scope="col">Author Name</th>
+                                                <th scope="col">Author URL</th>
+                                                <th scope="col">Expired On</th>
+                                                <th scope="col">is Enabled </th>
+                                                <th scope="col">is Expired </th>
+                                                <th scope="col">ScreenShots</th>
+
+                                                <th scope="col">Created On </th>
+                                                <th scope="col">Interval </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="isntagram_author_table">
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <i class="fas fa-spinner fa-spin mr-2 text-danger"></i> <span
+                                        class="text-primary font-weight-bold " style="font-size:15px"
+                                        id="table_last_sync"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
