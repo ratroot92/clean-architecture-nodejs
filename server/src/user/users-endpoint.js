@@ -6,7 +6,7 @@ module.exports = function makeUserEndpointHandler({ userList }) {
   return async function handle(httpRequest) {
     switch (httpRequest.method) {
       case 'POST':
-        return postContact(httpRequest);
+        return postUser(httpRequest);
 
       case 'GET':
         return getUser(httpRequest);
@@ -33,7 +33,7 @@ module.exports = function makeUserEndpointHandler({ userList }) {
     };
   }
 
-  async function postContact(httpRequest) {
+  async function postUser(httpRequest) {
     let userInfo = httpRequest.body;
     if (!userInfo) {
       return makeHttpError({
@@ -54,7 +54,10 @@ module.exports = function makeUserEndpointHandler({ userList }) {
     }
 
     try {
-      const user = makeContact(userInfo);
+      const user = makeUser(userInfo);
+      console.log('===============================');
+      console.log('user ==> ', user);
+      console.log('===============================');
       const result = await userList.add(user);
       return {
         headers: {
@@ -64,6 +67,9 @@ module.exports = function makeUserEndpointHandler({ userList }) {
         data: JSON.stringify(result),
       };
     } catch (e) {
+      console.log('e.message ==>', e.message);
+      console.log('e.stack ==>', e.stack);
+
       return makeHttpError({
         errorMessage: e.message,
         statusCode: e instanceof UniqueConstraintError ? 409 : e instanceof InvalidPropertyError || e instanceof RequiredParameterError ? 400 : 500,
