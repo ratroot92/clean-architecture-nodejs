@@ -1,21 +1,11 @@
 function adaptRequest(req = {}) {
-  console.log('=========================');
-  console.log({
-    queryParams: req.query,
-    pathParams: req.params,
-    body: req.body,
-    method: req.method,
-    path: req.path,
-  });
-  console.log('=========================');
-
-  return Object.freeze({
-    queryParams: req.query,
-    pathParams: req.params,
-    body: req.body,
-    method: req.method,
-    path: req.path,
-  });
+    return Object.freeze({
+        queryParams: req.query,
+        pathParams: req.params,
+        body: req.body,
+        method: req.method,
+        path: req.path,
+    })
 }
 
-module.exports = adaptRequest;
+module.exports = adaptRequest
